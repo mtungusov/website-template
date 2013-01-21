@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta name="viewport" content="width=device-width">
+  <meta name="google-site-verification" content="">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="../assets/css/ie8.css">
+  <![endif]-->
+  <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+  improve your experience.</p>
+<![endif]-->
+
+<div class="wrapper">
+  <header></header>
+
+  <nav class="row">
+    <ul class="menu">
+      <li class="menu__item"><a href="/">home</a></li>
+      <li class="menu__item" ng-class="{'menu__item_active': curPath == 'page2'}">
+        <a ng-click="setRoute('page2')">page2</a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="row">
+    <ul class="thumbnails">
+      <li class="thumbnails__item"><a class="thumbnail" href=""><span>menu1</span><img src="menu1.png" alt="menu1"></a></li>
+      <li class="thumbnails__item"><a class="thumbnail" href=""><span>menu2</span><img src="menu2.png" alt="menu2"></a></li>
+    </ul>
+  </nav>
+
+  <div class="content"></div>
+
+  <div class="gallery-wrapper row">
+    <div class="alert-no-js">Enable javascript for view gallery.</div>
+
+    <ul ng-show="showThumbs" class="thumbnails">
+      <li ng-repeat="image in images[keyImages]"
+          ng-click="setCurrentImage(image)"
+          class="thumbnails__item">
+          <div  class="thumbnail"
+                ng-class="{thumbnail_active: currentImage == image}">
+            <img ng-src="./{{keyImages}}/t/t{{image}}" alt="t{{image}}">
+          </div>
+        </li>
+    </ul>
+
+    <div ng-show="showGalleryImage" class="gallery-image">
+      <img ng-src="./{{keyImages}}/{{currentImage}}" alt="{{currentImage}}">
+      <div  ng-show="hasPrevImage()"
+            ng-click="setPrevImage()"
+            class="btn-gallery_prev"
+            unselectable="on">
+            <span><i class="icon-chevron-left"></i></span></div>
+      <div  ng-show="hasNextImage()"
+            ng-click="setNextImage()"
+            class="btn-gallery_next"
+            unselectable="on"><span><i class="icon-chevron-right"></i></span></div>
+      <div  class="gallery-status"
+            unselectable="on">{{indexOfImages + 1}}/{{sizeOfImages}}<span ng-click="toggleViewMode()" class="btn-gallery_close"><i class="icon-remove"></i></span></div>
+    </div>
+  </div>
+
+  <footer></footer>
+
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+  var _gaq = [
+    ['_setAccount', 'UA-XXXXX-X'],
+    ['_trackPageview']
+  ];
+  (function (d, t) {
+    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s)
+  }(document, 'script'));
+</script>
+</body>
+</html>

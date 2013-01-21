@@ -1,0 +1,25 @@
+body {
+  font-family: Verdana, Tahoma, Arial, serif;
+  font-size: 14px;
+}
+
+h1 {
+  font-family: Verdana, Tahoma, Arial, serif;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+p {
+  color: $textColor;
+}

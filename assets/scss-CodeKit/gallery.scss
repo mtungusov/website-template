@@ -1,0 +1,87 @@
+.gallery-image {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 5% auto 15% auto;
+  padding-top: $galleryStatusH;
+
+  img {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.gallery-status {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: $galleryStatusH;
+  font-weight: bold;
+}
+
+.btn-gallery_close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  text-align: right;
+  cursor: pointer;
+}
+
+.btn-gallery_prev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  text-align: left;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+  }
+}
+
+.btn-gallery_next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  text-align: right;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.btn-gallery_prev, .btn-gallery_next {
+  z-index: 2;
+  span {
+    top: 45%;
+    display: block;
+
+    [class^="icon-"] {
+      margin-top: 25px;
+    }
+  }
+}
+
+.gallery-status, .btn-gallery_prev, .btn-gallery_next {
+  @include unselectable;
+  opacity: 0;
+  @include transition(0.2s);
+}
+
+.gallery-image {
+  &:hover {
+    .gallery-status, .btn-gallery_prev, .btn-gallery_next {
+      opacity: 1;
+    }
+
+  }
+}

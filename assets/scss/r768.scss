@@ -1,0 +1,19 @@
+.block-1, .block-N {
+  @include row-element;
+}
+
+.block-1 {
+  @include row-element-l1-w24;
+}
+
+.block-N {
+  @include row-element-l24-w1;
+}
+
+/****************************/
+
+.wrapper {
+  width: 600px;
+  margin: 0 auto;
+  background: url(#{$imgUrl}bg-wrapper-left,top-768.png) repeat-y 0 0;
+}

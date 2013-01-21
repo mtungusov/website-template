@@ -1,0 +1,22 @@
+# <IfModule mod_charset.c>
+#   CharsetDisable On
+# </IfModule>
+# AddDefaultCharset UTF-8
+
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTP_HOST} ^SiteName.com
+#   RewriteRule (.*) http://www.SiteName.com/$1 [R=301,L]
+#   RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+#   RewriteRule ^index\.html$ / [R=301,L]
+# </IfModule>
+
+# <IfModule mod_expires.c>
+#   FileETag none
+#   ExpiresActive On
+#   ExpiresDefault "access plus 5 minutes"
+#   ExpiresByType image/gif "access plus 15 minutes"
+#   ExpiresByType image/png "access plus 15 minutes"
+#   ExpiresByType image/jpg "access plus 15 minutes"
+#   ExpiresByType image/jpeg "access plus 15 minutes"
+# </IfModule>
